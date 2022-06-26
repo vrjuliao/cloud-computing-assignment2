@@ -7,7 +7,7 @@ import requests
 
 last_update_date = datetime.min
 latest_version = 'v0.0.0'
-server_version = 'v0.0.2'
+server_version = 'v0.0.3'
 model = None
 version_file_url = "https://raw.githubusercontent.com/vrjuliao/BCC/master/cloud-computing/tp2/classsifier/VERSION.json"
 model_file_url = "https://raw.githubusercontent.com/vrjuliao/BCC/master/cloud-computing/tp2/classsifier/isamerican.pickle"
