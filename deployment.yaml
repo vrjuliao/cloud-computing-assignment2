@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: viniciusramos-american-predictor
-        image: docker.io/vrjuliao/american-predictor:v0.0.1
+        image: docker.io/vrjuliao/american-predictor
         ports:
         - containerPort: 5026
