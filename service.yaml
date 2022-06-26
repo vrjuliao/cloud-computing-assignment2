@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: viniciusramos-american-predictor-service
 spec:
   selector:
     app: viniciusramos-american-predictor
