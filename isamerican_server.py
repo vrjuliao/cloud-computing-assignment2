@@ -7,6 +7,7 @@ import requests
 
 last_update_date = datetime.min
 latest_version = 'v0.0.0'
+server_version = 'v0.0.2'
 model = None
 version_file_url = "https://raw.githubusercontent.com/vrjuliao/BCC/master/cloud-computing/tp2/classsifier/VERSION.json"
 model_file_url = "https://raw.githubusercontent.com/vrjuliao/BCC/master/cloud-computing/tp2/classsifier/isamerican.pickle"
@@ -36,7 +37,7 @@ def load_model():
 app = Flask(__name__)
 @app.route("/api/american", methods=["POST"])
 def api_american():
-  global model, last_update_date, latest_version
+  global model, last_update_date, server_version
   load_model()
   if model is None:
     return jsonify({'err': 'no predictor model to load'}), 503
@@ -46,6 +47,6 @@ def api_american():
   is_american = model.predict([content['text']])
   return jsonify({
     "is_american": str(is_american[0]),
-    "version": latest_version,
+    "version": server_version,
     "model_date": last_update_date.strftime('%Y-%m-%d')
   })
